@@ -5,8 +5,7 @@ on:
      auth:
         description: 'GRDP Authorization Code'
         required: true
-        default: 'paste your code here'
-  
+        
 defaults:
   run:
     shell: bash
@@ -79,5 +78,7 @@ jobs:
            send "123456\r"
            expect eof
            '
-    - name: Create SSH Access
-      uses: mxschmitt/action-tmate@v3
+    - name: Sleep for 30 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '400m'
